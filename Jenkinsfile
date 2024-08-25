@@ -14,7 +14,7 @@ pipeline {
         stage("test") {
 
             steps {
-                sh 'pwd'
+                powershell 'Get-Location'
             }
         }
         
