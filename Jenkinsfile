@@ -17,6 +17,14 @@ pipeline {
                 checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ravi090956/hello-world.git']])
             }
         }
+
+        stage ('copy') {
+
+            steps {
+                sh 'scp /Jenkinsfile dockeradmin@54.87.132.154:/opt/docker'
+            }
+            
+        }
         
         stage ('build') {
             
