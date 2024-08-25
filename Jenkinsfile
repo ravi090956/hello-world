@@ -10,6 +10,13 @@ pipeline {
         pollSCM '* * * * *'
     }
     stages {
+
+        stage("test") {
+
+            steps {
+                sh 'pwd'
+            }
+        }
         
         stage("checkout") {
             
