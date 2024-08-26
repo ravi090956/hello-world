@@ -28,7 +28,7 @@ pipeline {
         stage ('copy') {
 
             steps {
-                sh 'scp /Jenkinsfile dockeradmin@54.87.132.154:/opt/docker'
+                sshPublisher(publishers: [sshPublisherDesc(configName: 'docker', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '//opt//docker', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '/Jenkinsfile')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
             }
             
         }
